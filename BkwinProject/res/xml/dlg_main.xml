@@ -1,21 +1,24 @@
 ﻿<layer title="BkWin" width="800" height="600" appwin="1" resize="0">
-	<header crbg="f3f3f3"  width="full" height="36">
-		<text class="dlgtitle" pos="25,10">BkWin Damo Entry</text>
+	<header crbg="F5F5F5"  width="full" height="36">
+        <img pos="10,10" skin="logo" />
+		<text class="dlgtitle" pos="30,12">进程管理器</text>
+        <dlgbtn id="1001" pos="-100,10,-50,30" class="linkimage">
+            <text transparent="1" class="text_center" pos="0,0,-0,-0">设置</text>  
+        </dlgbtn>
 		<imgbtn id="1000" class="linkimage" skin="closebtn" pos="-37,0"/>
 	</header>
 
-	<body crbg="ffffff" width="full" height="full">
-      <dlgbtn pos="20,20,120,54" class="btn_cmn" id="2000">
-          <text class="text_center" pos="0,0,-0,-0">普通控件集合</text>
-      </dlgbtn>
-      <dlgbtn pos="140,20,240,54" class="btn_cmn"  id="2001">
-        <text class="text_center" pos="0,0,-0,-0">ListWnd Demo</text>
-      </dlgbtn>
-      <dlgbtn pos="260,20,360,54" class="btn_cmn"  id="2002">
-        <text class="text_center" pos="0,0,-0,-0">菜单 Demo</text>
-      </dlgbtn>
+	<body crbg="FFFFFF" width="full" height="full">
+        <dlg pos="0,0,-0,80" crbg="DCDCDC">
+            <img pos="30,10" skin="logo_big" />
+            <text pos="100,18">正在运行的进程  200个</text>
+            <text pos="100,43">CPU占用：3%</text>
+            <text pos="200,43">内存占用：10%</text>
+
+            <dlgbtn id="1002" pos="600,20,720,60" class="btn_cmn">  
+                <text class="text_center" pos="0,0,-0,-0">一键结束</text>  
+            </dlgbtn>
+        </dlg>
 	</body>
 
-	<footer crbg="f3f3f3" width="full" height="45">
-	</footer>
 </layer>

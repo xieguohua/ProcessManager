@@ -10,6 +10,8 @@ DEFINE_XML(IDR_MAIN, 100, "res\\xml\\dlg_main.xml")
 DEFINE_XML(IDR_DLG_DEMO_LISTWND, 101, "res\\xml\\dlg_demo_listwnd.xml")
 DEFINE_XML(IDR_IMAGE_CONTENT_MENULAYOUT, 102, "res\\xml\\image_content_menuLayout.xml")
 DEFINE_XML(IDR_DLG_CTRL_SET, 103, "res\\xml\\dlg_ctrl_set.xml")
+DEFINE_XML(IDR_DLG_SETTING, 104, "res\\xml\\dlg_setting.xml")
+
 
 //////////////////////////////////////////////////////////////////////////
 // PNG
@@ -28,3 +30,10 @@ DEFINE_PNG(IDP_3004,               3004,   "res\\png\\slider\\slider_value_grey.
 DEFINE_PNG(IDP_3005,               3005,   "res\\png\\slider\\slider_bar_grey.png")
 DEFINE_PNG(IDP_3006,               3006,   "res\\png\\slider\\btn_small_add.png")
 DEFINE_PNG(IDP_3007,               3007,   "res\\png\\slider\\btn_small_sub.png")
+
+DEFINE_PNG(IDP_4000,			   4000,   "res\\png\\btn_sys_close.png")
+DEFINE_PNG(IDP_4001,		       4001,   "res\\png\\btn_sys_maximize.png")
+DEFINE_PNG(IDP_4002,		       4002,   "res\\png\\dlg_btn_min.png")
+DEFINE_PNG(IDP_4003,               4003,   "res\\png\\logo.png")
+DEFINE_PNG(IDP_4004,               4004,   "res\\png\\menu_setting.png")
+DEFINE_PNG(IDP_4005,               4005,   "res\\png\\simple_logo.png")

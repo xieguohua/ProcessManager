@@ -186,11 +186,19 @@
 				>
 			</File>
 			<File
-				RelativePath=".\KBkwinDemoDlg.cpp"
+				RelativePath=".\KDlgSetting.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\KBkwinDemoDlg.h"
+				RelativePath=".\KDlgSetting.h"
+				>
+			</File>
+			<File
+				RelativePath=".\KMainDlg.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\KMainDlg.h"
 				>
 			</File>
 			<File
@@ -700,6 +708,10 @@
 				</File>
 				<File
 					RelativePath=".\res\xml\dlg_main.xml"
+					>
+				</File>
+				<File
+					RelativePath=".\res\xml\dlg_setting.xml"
 					>
 				</File>
 			</Filter>

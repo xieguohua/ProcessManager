@@ -1,0 +1,11 @@
+﻿<layer title="BkWin" width="400" height="420" appwin="1" resize="0">
+	<header crbg="f3f3f3"  width="full" height="36">
+        <img pos="10,10" skin="logo" />
+		<text class="dlgtitle" pos="30,12">进程管理器-设置</text>
+		<imgbtn id="1000" class="linkimage" skin="closebtn" pos="-37,0"/>
+	</header>
+
+	<body crbg="ffffff" width="full" height="full">
+        
+	</body>
+</layer>

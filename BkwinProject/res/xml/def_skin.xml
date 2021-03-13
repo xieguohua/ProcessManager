@@ -13,4 +13,11 @@
   <png name="slider_value_grey" src="3004" margin_left="1" margin_right="1" />
   <png name="btn_small_add" src="3006" subwidth="18"/>
   <png name="btn_small_sub" src="3007" subwidth="18"/>
+
+    <png name="closebtn"  src="4000" subwidth="32"/>
+    <png name="maxbtn"    src="4001" subwidth="32"/>
+    <png name="minbtn"    src="4002" subwidth="32"/>
+    <png name="logo" src="4003"/>
+    <png name="menu_setting" src="4004"/>
+    <png name="logo_big" src="4005"/>
 </skins>

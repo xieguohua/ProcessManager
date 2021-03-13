@@ -17,6 +17,7 @@ public:
     enum
     {
         IDC_BTN_CLOSE = 1000,
+        IDC_BTN_SETTING = 1001,
 
 		IDC_BTN_CTRL_SET = 2000,
 
@@ -27,6 +28,7 @@ public:
 protected:
     BK_NOTIFY_MAP(IDC_RICHVIEW_WIN_EX)
         BK_NOTIFY_ID_COMMAND(IDC_BTN_CLOSE, OnBtnClose)
+        BK_NOTIFY_ID_COMMAND(IDC_BTN_SETTING, OnBtnSetting)
 		BK_NOTIFY_ID_COMMAND(IDC_BTN_CTRL_SET, OnBtnCtrlSet)
 		BK_NOTIFY_ID_COMMAND(IDC_BTN_DEMO_LISTWND, OnBtnDemoListWnd)
 		BK_NOTIFY_ID_COMMAND(IDC_BTN_DEMO_MENU, OnBtnDemoMenu)
@@ -42,6 +44,7 @@ protected:
 
     BOOL OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/);
     void OnBtnClose();
+    void OnBtnSetting();
     void OnSysCommand(UINT nID, CPoint point);
 
 	void OnBtnDemoListWnd();

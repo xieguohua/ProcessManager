@@ -2,6 +2,7 @@
 #include "KMainDlg.h"
 #include "DemoListWndDlg.h"
 #include "DemoCmnCtrlSetDlg.h"
+#include "KDlgSetting.h"
 
 KMainDlg::KMainDlg()
     : CBkDialogViewImplEx<KMainDlg>(IDR_MAIN)
@@ -78,4 +79,10 @@ void KMainDlg::OnBkMenuCmd(CBkDialogMenu* pDialogMenu, LPCWSTR lpszMenuName)
 
 	strCmd.Format(L"OnBkMenuCmd name=%s", lpszMenuName);
 	MessageBox(strCmd);
+}
+
+void KMainDlg::OnBtnSetting()
+{
+    KDlgSetting dlg;
+    dlg.DoModal();
 }

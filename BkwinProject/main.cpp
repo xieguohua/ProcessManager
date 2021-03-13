@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "KBkwinDemoDlg.h"
+#include "KMainDlg.h"
 
 void InitRes()
 {
