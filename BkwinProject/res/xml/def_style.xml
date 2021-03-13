@@ -1,0 +1,20 @@
+﻿<style>
+<class name="msgboxhead" font="0000" crtext="000000" crbg="0B363A"/>
+<class name="msgboxbody" font="0000" crtext="000000" crbg="FFFFFF"/>
+<class name="msgboxfoot"  font="0000" crtext="000000" crbg="0FF0FF"/>
+
+<class name="dlgtitle" font="0004" crtext="4E759A"/>
+<class name="linkimage" cursor="hand"/>
+  
+<class name="text_center" textmode="25"/>
+<class name="btn_cmn" skin="btn_cmn" cursor="hand"/>
+<class name="menu_item_class"  textmode="24" crbghover="EEEEEE"/>
+<class name="listitem_class" crbghover="cdcdcd"/>
+
+  <class name="slider_bar" skin="slider_bar"/>
+  <class name="slider_value" skin="slider_value"/>
+  <class name="slider_bg" skin="slider_bg"/>
+  <class name="slider_center" skin="slider_center"/>
+  <class name="slider_bar_grey" skin="slider_bar_grey"/>
+  <class name="slider_value_grey" skin="slider_value_grey"/>
+</style>

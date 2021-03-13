@@ -1,0 +1,70 @@
+﻿<layer title="BkWin" width="800" height="450" appwin="1" resize="0">
+  <header crbg="f3f3f3"  width="full" height="36">
+    <text class="dlgtitle" pos="25,10">BkWin Damo ListWnd </text>
+    <imgbtn id="1000" class="linkimage" skin="closebtn" pos="-37,0"/>
+  </header>
+  <body crbg="ffffff" width="full" height="full">
+    <listwnd id="2000" pos="40,20,-40,400">
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem1</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮1</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem2</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮2</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem3</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮3</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem4</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn"  id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮4</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem5</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮5</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem6</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮6</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem7</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮7</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem8</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮8</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem9</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮9</text>
+        </dlgbtn>
+      </listitem>
+      <listitem height="60" class="listitem_class">
+        <text pos="0,0,-0,-0" class="text_center">listitem10</text>
+        <dlgbtn pos="-120,|-17,-20,|17" class="btn_cmn" id="10">
+          <text class="text_center" pos="0,0,-0,-0">按钮10</text>
+        </dlgbtn>
+      </listitem>
+    </listwnd>
+  </body>
+</layer>

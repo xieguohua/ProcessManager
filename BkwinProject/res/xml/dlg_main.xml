@@ -1,0 +1,21 @@
+﻿<layer title="BkWin" width="800" height="600" appwin="1" resize="0">
+	<header crbg="f3f3f3"  width="full" height="36">
+		<text class="dlgtitle" pos="25,10">BkWin Damo Entry</text>
+		<imgbtn id="1000" class="linkimage" skin="closebtn" pos="-37,0"/>
+	</header>
+
+	<body crbg="ffffff" width="full" height="full">
+      <dlgbtn pos="20,20,120,54" class="btn_cmn" id="2000">
+          <text class="text_center" pos="0,0,-0,-0">普通控件集合</text>
+      </dlgbtn>
+      <dlgbtn pos="140,20,240,54" class="btn_cmn"  id="2001">
+        <text class="text_center" pos="0,0,-0,-0">ListWnd Demo</text>
+      </dlgbtn>
+      <dlgbtn pos="260,20,360,54" class="btn_cmn"  id="2002">
+        <text class="text_center" pos="0,0,-0,-0">菜单 Demo</text>
+      </dlgbtn>
+	</body>
+
+	<footer crbg="f3f3f3" width="full" height="45">
+	</footer>
+</layer>

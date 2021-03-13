@@ -1,0 +1,44 @@
+﻿<layer title="BkWin" width="800" height="800" appwin="1" resize="0">
+	<header crbg="f3f3f3"  width="full" height="36">
+		<text class="dlgtitle" pos="25,10">BkWin Damo Ctrl Set </text>
+		<imgbtn id="1000" class="linkimage" skin="closebtn" pos="-37,0"/>
+	</header>
+	<body crbg="ffffff" width="full" height="full">
+    <sliderviewex id="4101" pos="20,20,250,40" max_value="180" current_value="90">
+      <imgbtn skin="btn_small_sub" id="1" pos="0,|-9"/>
+      <imgbtn skin="btn_small_add" id="2" pos="-18,|-9"/>
+      <img pos="28,|-2,-28,|2" class="slider_bg" transparent="1"/>
+      <img pos="28,0,-28,-0" id="3"/>
+      <img pos="|-2,|-6,|2,|2" class="slider_center" transparent="1"/>
+      <img pos="28,|-2,-28,|2" id="4" class="slider_value"/>
+      <img pos="0,|-10,8,|10" id="5" class="slider_bar"/>
+    </sliderviewex>
+    
+    <img skin="wallpaper_image" pos="280,20"/>
+
+    <rundrectpath pos="520,20,620,100" crbg="ff00ff" rndwidht="8" rndheight="8" bdrawbg="1" crline="000000" linesize="1" crlinealpha="255"/>
+
+    <rundrect pos="640,100,720,200" crbg="ff00ff" rndwidht="10" rndheight="10"/>
+
+    <linearlayout pos="30,50,-30,-30" layout_orientation="1" layout_reverse="0">
+      <dlgbtn pos="245,110" class="nac_home_big_btn_entry" id="10000" layout_margin_right="20">
+        <text pos="20,20" class="center_text_class" font="0804" crtext="5D6574">高级打印</text>
+        <text pos="20,60,140,94" class="left_multiline_text_class" font="0000" crtext="5D6574">自由排版，多图批量打印，强化文字效果</text>
+      </dlgbtn>
+      <dlgbtn pos="245,110" class="nac_home_big_btn_entry" id="10001" layout_margin_right="20">
+        <text pos="20,20" class="center_text_class" font="0804" crtext="5D6574">图片转PDF</text>
+        <text pos="20,60,140,94" class="left_multiline_text_class" font="0000" crtext="5D6574">支持多图合称为一个PDF文件</text>
+      </dlgbtn>
+      <dlgbtn pos="245,110" class="nac_home_big_btn_entry" id="10002" layout_margin_right="20">
+        <text pos="20,20" class="center_text_class" font="0804" crtext="5D6574">图片压缩</text>
+        <text pos="20,60,140,94" class="left_multiline_text_class" font="0000" crtext="5D6574">压缩图片体积至指定范围</text>
+      </dlgbtn>
+      <dlgbtn pos="0,0,245,110" class="nac_home_big_btn_entry" id="10003" layout_margin_right="20">
+        <text pos="20,20" class="center_text_class" font="0804" crtext="5D6574">修改尺寸</text>
+        <text pos="20,60,140,94" class="left_multiline_text_class" font="0000" crtext="5D6574">修改图片尺寸为指定大小</text>
+      </dlgbtn>
+    </linearlayout>
+    
+    
+  </body>
+</layer>

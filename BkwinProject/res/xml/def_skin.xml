@@ -1,0 +1,16 @@
+﻿<skins>
+	<png name="closebtn" src="2000" subwidth="36"/>
+  <png name="minbtn" src="2001" subwidth="36"/>
+  <png name="btn_cmn" src="2003" subwidth="100"/>
+  <png name="wallpaper_image" src="2004"/>
+  <png name="menu_icons" src="2005" subwidth="12"/>
+
+  <png name="slider_bar" src="3000" margin_top="4" margin_bottom="4" margin_left="3" margin_right="3"/>
+  <png name="slider_value" src="3003" margin_left="1" margin_right="1" />
+  <png name="slider_bg" src="3001" margin_left="1" margin_right="1"/>
+  <png name="slider_center" src="3002" margin_top="4" margin_bottom="3" />
+  <png name="slider_bar_grey" src="3005" margin_top="4" margin_bottom="4" margin_left="3" margin_right="3"/>
+  <png name="slider_value_grey" src="3004" margin_left="1" margin_right="1" />
+  <png name="btn_small_add" src="3006" subwidth="18"/>
+  <png name="btn_small_sub" src="3007" subwidth="18"/>
+</skins>

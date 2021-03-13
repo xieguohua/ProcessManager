@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menuroot width="220" padding="1" crbg="ffffff">
+  <dlg pos="0,0,-0,-0">
+	<img pos="0,0,-0,1" crbg="EEEEEE"/>
+	<img pos="0,0,1,-0" crbg="EEEEEE"/>
+	<img pos="0,-0,-0,-1" crbg="EEEEEE"/>
+	<img pos="-1,0,-0,-1" crbg="EEEEEE"/>
+  </dlg>
+  
+  <menuitem height="2" transparent="1"/>
+  
+  <menuitem name="menu_cmd_image_to_pdf" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">图片转PDF</text>
+    <img pos="14,|-6" skin="menu_icons" sub="0"/>
+  </menuitem>
+    
+  <menuitem name="menu_cmd_image_to_text" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">提取文字</text>
+	<img pos="14,|-6" skin="menu_icons" sub="32"/>
+  </menuitem>
+
+  <menuitem name="menu_cmd_add_watermark" height="22" class="menu_item_class" show="0">
+    <text pos="40,0,-40,-0" class="menu_item_text">加水印</text>
+	<img pos="14,|-6" skin="menu_icons" sub="1"/>
+  </menuitem>
+  <menuitem name="menu_cmd_image_compress" height="22" class="menu_item_class" show="1">
+    <text pos="40,0,-40,-0" class="menu_item_text">图片压缩</text>
+    <img pos="14,|-6" skin="menu_icons" sub="2"/>
+  </menuitem>
+  <menuitem name="menu_cmd_change_image_size" height="22" class="menu_item_class" show="1">
+    <text pos="40,0,-40,-0" class="menu_item_text">修改尺寸</text>
+	<img pos="14,|-6" skin="menu_icons" sub="3"/>
+  </menuitem>
+  <menuitem name="menu_cmd_advanced_print" height="22" class="menu_item_class" show="1">
+    <text pos="40,0,-40,-0" class="menu_item_text">高级打印</text>
+    <img pos="14,|-6" skin="menu_icons" sub="31"/>
+	<text pos="160,0,-5,-0" class="menu_item_shortkey_text">Ctrl+P</text>
+  </menuitem>
+  <menuitem name="menu_cmd_free_rotate" height="22" class="menu_item_class" show="0">
+    <text pos="40,0,-40,-0" class="menu_item_text">自由旋转</text>
+	<img pos="14,|-6" skin="menu_icons" sub="4"/>
+  </menuitem>
+  <menuitem name="menu_cmd_edit_by_color" height="22" class="menu_item_class" show="1">
+    <text pos="40,0,-40,-0" class="menu_item_text">调色</text>
+  </menuitem>
+  <menuitem name="menu_cmd_batch_process" height="22" class="menu_item_class" show="1">
+    <text pos="40,0,-40,-0" class="menu_item_text">批量处理</text>
+	<img pos="14,|-6" skin="menu_icons" sub="5"/>
+	<img pos="-26,|-6" skin="menu_icons" sub="25"/>
+	
+	<menuroot width="140" padding="1" crbg="ffffff">
+		<dlg pos="0,0,-0,-0">
+			<img pos="0,0,-0,1" crbg="EEEEEE"/>
+			<img pos="0,0,1,-0" crbg="EEEEEE"/>
+			<img pos="0,-0,-0,-1" crbg="EEEEEE"/>
+			<img pos="-1,0,-0,-1" crbg="EEEEEE"/>
+		</dlg>
+		<menuitem height="2" transparent="1"/>
+    <menuitem name="menu_cmd_batch_image_rename" height="22" class="menu_item_class" show="1">
+      <text pos="40,0,-20,-0" class="menu_item_text">批量重命名</text>
+      <img pos="14,|-6" skin="menu_icons" sub="12"/>
+    </menuitem>
+    <menuitem name="menu_cmd_batch_image_convert" height="22" class="menu_item_class" show="1">
+      <text pos="40,0,-20,-0" class="menu_item_text">批量转格式</text>
+      <img pos="14,|-6" skin="menu_icons" sub="13"/>
+    </menuitem><menuitem name="menu_cmd_batch_image_rotate" height="22" class="menu_item_class" show="1">
+			<text pos="40,0,-20,-0" class="menu_item_text">批量旋转</text>
+			<img pos="14,|-6" skin="menu_icons" sub="14"/>
+		</menuitem>
+    <menuitem name="menu_cmd_batch_image_compress" height="22" class="menu_item_class" show="1">
+      <text pos="40,0,-20,-0" class="menu_item_text">批量压缩</text>
+      <img pos="14,|-6" skin="menu_icons" sub="15"/>
+    </menuitem>
+		<menuitem name="menu_cmd_batch_image_resize" height="22" class="menu_item_class" show="1">
+			<text pos="40,0,-20,-0" class="menu_item_text">批量改尺寸</text>
+			<img pos="14,|-6" skin="menu_icons" sub="16"/>
+		</menuitem>
+		<menuitem name="menu_cmd_batch_image_watermark" height="22" class="menu_item_class" show="1">
+			<text pos="40,0,-20,-0" class="menu_item_text">批量加水印</text>
+			<img pos="14,|-6" skin="menu_icons" sub="33"/>
+		</menuitem>
+		<menuitem height="2" transparent="1"/>
+	</menuroot>
+  <menuitem height="2" transparent="1"/>
+  </menuitem>
+  <menuitem name="menu_cmd_app_center" height="22" class="menu_item_class" show="1">
+    <text pos="40,0,-40,-0" class="menu_item_text">更多工具</text>
+  </menuitem>
+  
+  <menuitem height="5" class="menu_item_class" transparent="1">
+    <img pos="40,|0,-14,|1" crbg="EEEEEE"/>
+  </menuitem>
+  <menuitem name="menu_cmd_print" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">打印</text>
+	<!--<text pos="160,0,-5,-0" class="menu_item_shortkey_text">Ctrl+P</text>-->
+	<img pos="14,|-6" skin="menu_icons" sub="22"/>
+  </menuitem>
+  <menuitem name="menu_cmd_copy" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">复制</text>
+	<text pos="160,0,-5,-0" class="menu_item_shortkey_text">Ctrl+C</text>
+	<img pos="14,|-6" skin="menu_icons" sub="7"/>
+  </menuitem>
+  <menuitem name="menu_cmd_save_as" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">另存为</text>
+	<text pos="160,0,-5,-0" class="menu_item_shortkey_text">Ctrl+S</text>
+  </menuitem>
+  <menuitem name="menu_cmd_rename" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">重命名</text>
+  </menuitem>
+  <menuitem name="menu_cmd_delete" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">删除</text>
+	<img pos="14,|-6" skin="menu_icons" sub="8"/>
+  </menuitem>
+  <menuitem name="menu_cmd_change_format" height="22" class="menu_item_class" show="1">
+    <text pos="40,0,-40,-0" class="menu_item_text">图片格式转换</text>
+  </menuitem>
+  <menuitem height="5" class="menu_item_class" transparent="1">
+    <img pos="40,|0,-14,|1" crbg="EEEEEE"/>
+  </menuitem>
+  <menuitem name="menu_cmd_slide_preview" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">幻灯片</text>
+    <text pos="160,0,-5,-0" class="menu_item_shortkey_text">F5</text>
+	<img pos="14,|-6" skin="menu_icons" sub="9"/>
+  </menuitem>
+  <menuitem name="menu_cmd_open_image" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">打开图片</text>
+	<text pos="160,0,-5,-0" class="menu_item_shortkey_text">Ctrl+O</text>
+	<img pos="14,|-6" skin="menu_icons" sub="23"/>
+  </menuitem>
+  <menuitem name="menu_cmd_open_file_location" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">打开文件所在位置</text>
+  </menuitem>
+  <menuitem name="menu_cmd_copy_file_location" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">复制文件路径</text>
+  </menuitem>
+  <menuitem name="menu_cmd_set_wallpaper" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">设为桌面背景</text>
+  </menuitem>
+  <menuitem height="5" class="menu_item_class" transparent="1">
+    <img pos="40,|0,-14,|1" crbg="EEEEEE"/>
+  </menuitem>
+
+  <menuitem name="menu_cmd_show_bird_see" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">显示鸟瞰图</text>
+    <img pos="14,|-6" skin="menu_icons" sub="30"/>
+  </menuitem>
+  <menuitem name="menu_cmd_show_thumbnail" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">启动缩略图预览</text>
+    <img pos="14,|-6" skin="menu_icons2" sub="1"/>
+  </menuitem>
+  <menuitem name="menu_cmd_image_info" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">图片信息</text>
+    <text pos="160,0,-5,-0" class="menu_item_shortkey_text">Ctrl+I</text>
+    <img pos="14,|-6" skin="menu_icons" sub="10"/>
+  </menuitem>
+  <menuitem name="menu_cmd_setting" height="22" class="menu_item_class">
+    <text pos="40,0,-40,-0" class="menu_item_text">设置中心</text>
+    <img pos="14,|-6" skin="menu_icons" sub="11"/>
+  </menuitem>
+  <menuitem height="2" transparent="1"/>
+</menuroot>
