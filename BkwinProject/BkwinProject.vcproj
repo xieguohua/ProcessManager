@@ -59,6 +59,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				OutputFile="..\product\win32\processmanager.exe"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
 			/>
@@ -202,11 +203,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\KUtils.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\KUtils.h"
+				>
+			</File>
+			<File
 				RelativePath=".\main.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\ReportPageUIHandler.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SettingDefine.h"
 				>
 			</File>
 			<File

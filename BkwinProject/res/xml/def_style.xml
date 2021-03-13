@@ -5,6 +5,7 @@
 
 <class name="dlgtitle" font="0004" crtext="4E759A"/>
 <class name="linkimage" cursor="hand"/>
+<class name="link_bule_text" textmode="25" crtext="548EF8" font="0002" cursor="hand" />
   
 <class name="text_center" textmode="25"/>
 <class name="btn_cmn" skin="btn_cmn" cursor="hand"/>
@@ -17,4 +18,5 @@
   <class name="slider_center" skin="slider_center"/>
   <class name="slider_bar_grey" skin="slider_bar_grey"/>
   <class name="slider_value_grey" skin="slider_value_grey"/>
+  <class name="normalbtn" skin="normalbtn" font="0000" crtext="000000" textmode="25" cursor="hand" x-margin="5"/>
 </style>

@@ -8,7 +8,6 @@
 class KMainDlg
     : public CBkDialogViewImplEx<KMainDlg>
 	, public BkWin::WndShadowHelper<KMainDlg>
-	, public CBkDialogMenu::IBKMenuCmdListener
 {
 public:
     KMainDlg();
@@ -29,9 +28,6 @@ protected:
     BK_NOTIFY_MAP(IDC_RICHVIEW_WIN_EX)
         BK_NOTIFY_ID_COMMAND(IDC_BTN_CLOSE, OnBtnClose)
         BK_NOTIFY_ID_COMMAND(IDC_BTN_SETTING, OnBtnSetting)
-		BK_NOTIFY_ID_COMMAND(IDC_BTN_CTRL_SET, OnBtnCtrlSet)
-		BK_NOTIFY_ID_COMMAND(IDC_BTN_DEMO_LISTWND, OnBtnDemoListWnd)
-		BK_NOTIFY_ID_COMMAND(IDC_BTN_DEMO_MENU, OnBtnDemoMenu)
     BK_NOTIFY_MAP_END()
 
     BEGIN_MSG_MAP_EX(CBkDialogViewImplEx<KMainDlg>)
@@ -46,13 +42,4 @@ protected:
     void OnBtnClose();
     void OnBtnSetting();
     void OnSysCommand(UINT nID, CPoint point);
-
-	void OnBtnDemoListWnd();
-	void OnBtnDemoMenu();
-	void OnBtnCtrlSet();
-
-protected:
-	virtual void OnBkMenuCmd(CBkDialogMenu*  pDialogMenu, LPCWSTR lpszMenuName);
-protected:
-	CBkDialogMenu* m_pMenu;
 };

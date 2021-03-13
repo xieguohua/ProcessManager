@@ -1,5 +1,7 @@
 ﻿<skins>
+    
 	<png name="closebtn" src="2000" subwidth="36"/>
+    <button name="normalbtn" border="7D9EBC" bg="FBFCFD" bgup="FEFEFE" bgdown="C6E2FD" bguphover="FEFEFE" bgdownhover="DBEDFE" bguppush="C6E2FD" bgdownpush="FEFEFE"/>
   <png name="minbtn" src="2001" subwidth="36"/>
   <png name="btn_cmn" src="2003" subwidth="100"/>
   <png name="wallpaper_image" src="2004"/>

@@ -18,6 +18,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                        LPTSTR lpCmdLine,
                        int nCmdShow)
 {
+
+
     InitRes();
 
     KMainDlg dlg;

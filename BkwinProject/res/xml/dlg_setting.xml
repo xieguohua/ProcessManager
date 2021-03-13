@@ -1,4 +1,4 @@
-﻿<layer title="BkWin" width="400" height="420" appwin="1" resize="0">
+﻿<layer title="进程管理器-设置" width="400" height="420" appwin="1" resize="0">
 	<header crbg="f3f3f3"  width="full" height="36">
         <img pos="10,10" skin="logo" />
 		<text class="dlgtitle" pos="30,12">进程管理器-设置</text>
@@ -6,6 +6,24 @@
 	</header>
 
 	<body crbg="ffffff" width="full" height="full">
-        
+        <dlg pos="0,20,-0,-0">
+            <check id="2000" pos="20,10">CPU占用</check>
+            <check id="2001" pos="|5,10">内存占用</check>
+            
+            <check id="2002" pos="20,40">进程文件路径</check>
+            <check id="2003" pos="|5,40">线程数</check>
+            
+            <check id="2004" pos="20,70">句柄数</check>
+            <check id="2005" pos="|5,70">CPU占用</check>
+            
+            <check id="2006" pos="20,100">线程数</check>
+            <check id="2007" pos="|5,100">页面缓冲池高峰值</check>
+        </dlg>
 	</body>
+    
+    <footer crbg="f3f3f3" width="full" height="40">
+        <text id="1001" pos="15,10" class="link_bule_text">恢复默认</text>
+        <button id="1002" pos="-120,5,-70,28" class="normalbtn">确定</button>
+        <button id="1003" pos="-65,5,-15,28" class="normalbtn">取消</button>
+	</footer>
 </layer>
