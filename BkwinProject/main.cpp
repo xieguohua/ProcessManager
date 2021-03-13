@@ -20,7 +20,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 {
     InitRes();
 
-    KBkwinDemoDlg dlg;
+    KMainDlg dlg;
 
     dlg.DoModal();
 

@@ -5,14 +5,14 @@
 #include "bkwin/bkshadowdrawable.h"
 #include "bkwin/CBkDialogMenu.h"
 
-class KBkwinDemoDlg
-    : public CBkDialogViewImplEx<KBkwinDemoDlg>
-	, public BkWin::WndShadowHelper<KBkwinDemoDlg>
+class KMainDlg
+    : public CBkDialogViewImplEx<KMainDlg>
+	, public BkWin::WndShadowHelper<KMainDlg>
 	, public CBkDialogMenu::IBKMenuCmdListener
 {
 public:
-    KBkwinDemoDlg();
-	~KBkwinDemoDlg();
+    KMainDlg();
+	~KMainDlg();
 
     enum
     {
@@ -32,11 +32,11 @@ protected:
 		BK_NOTIFY_ID_COMMAND(IDC_BTN_DEMO_MENU, OnBtnDemoMenu)
     BK_NOTIFY_MAP_END()
 
-    BEGIN_MSG_MAP_EX(CBkDialogViewImplEx<KBkwinDemoDlg>)
+    BEGIN_MSG_MAP_EX(CBkDialogViewImplEx<KMainDlg>)
         MSG_BK_NOTIFY(IDC_RICHVIEW_WIN_EX)
         MSG_WM_INITDIALOG(OnInitDialog)
         MSG_WM_SYSCOMMAND(OnSysCommand)
-		CHAIN_MSG_MAP(CBkDialogViewImplEx<KBkwinDemoDlg>)
+		CHAIN_MSG_MAP(CBkDialogViewImplEx<KMainDlg>)
         REFLECT_NOTIFICATIONS_EX()
     END_MSG_MAP()
 

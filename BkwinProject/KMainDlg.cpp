@@ -1,16 +1,16 @@
 #include "stdafx.h"
-#include "KBkwinDemoDlg.h"
+#include "KMainDlg.h"
 #include "DemoListWndDlg.h"
 #include "DemoCmnCtrlSetDlg.h"
 
-KBkwinDemoDlg::KBkwinDemoDlg()
-    : CBkDialogViewImplEx<KBkwinDemoDlg>(IDR_MAIN)
+KMainDlg::KMainDlg()
+    : CBkDialogViewImplEx<KMainDlg>(IDR_MAIN)
 {
-	BkWin::WndShadowHelper<KBkwinDemoDlg>::SetShadowData(12, IDP_SHADOW);
+	BkWin::WndShadowHelper<KMainDlg>::SetShadowData(12, IDP_SHADOW);
 	m_pMenu = NULL;
 }
 
-KBkwinDemoDlg::~KBkwinDemoDlg()
+KMainDlg::~KMainDlg()
 {
 	if(m_pMenu) 
 	{
@@ -22,17 +22,17 @@ KBkwinDemoDlg::~KBkwinDemoDlg()
 	}
 }
 
-BOOL KBkwinDemoDlg::OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/)
+BOOL KMainDlg::OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/)
 {
     return TRUE;
 }
 
-void KBkwinDemoDlg::OnBtnClose()
+void KMainDlg::OnBtnClose()
 {
     EndDialog(IDCLOSE);
 }
 
-void KBkwinDemoDlg::OnSysCommand(UINT nID, CPoint point)
+void KMainDlg::OnSysCommand(UINT nID, CPoint point)
 {
     if (nID == SC_CLOSE)
     {
@@ -47,13 +47,13 @@ void KBkwinDemoDlg::OnSysCommand(UINT nID, CPoint point)
     }
 }
 
-void KBkwinDemoDlg::OnBtnDemoListWnd()
+void KMainDlg::OnBtnDemoListWnd()
 {
 	DemoListWndDlg dlg;
 	dlg.DoModal(m_hWnd);
 }
 
-void KBkwinDemoDlg::OnBtnDemoMenu()
+void KMainDlg::OnBtnDemoMenu()
 {
 	if (m_pMenu == NULL) {
 		m_pMenu = new CBkDialogMenu();
@@ -66,13 +66,13 @@ void KBkwinDemoDlg::OnBtnDemoMenu()
 	m_pMenu->PopUp(pt);
 }
 
-void KBkwinDemoDlg::OnBtnCtrlSet()
+void KMainDlg::OnBtnCtrlSet()
 {
 	DemoCmnCtrlSetDlg dlg;
 	dlg.DoModal(m_hWnd);
 }
 
-void KBkwinDemoDlg::OnBkMenuCmd(CBkDialogMenu* pDialogMenu, LPCWSTR lpszMenuName)
+void KMainDlg::OnBkMenuCmd(CBkDialogMenu* pDialogMenu, LPCWSTR lpszMenuName)
 {	
 	CString strCmd;
 
