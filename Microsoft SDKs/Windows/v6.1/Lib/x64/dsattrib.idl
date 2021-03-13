@@ -1,0 +1,137 @@
+
+import "unknwn.idl" ;
+import "wtypes.idl" ;
+import "objidl.idl";
+import "strmif.idl" ;
+
+//  ============================================================================
+//  interfaces
+
+interface IAttributeSet ;
+interface IAttributeGet ;
+
+/*++
+    ============================================================================
+    ============================================================================
+        sample attribute interfaces
+--*/
+
+[
+    object,
+    uuid(583ec3cc-4960-4857-982b-41a33ea0a006),
+    pointer_default(unique)
+]
+interface IAttributeSet : IUnknown
+{
+    HRESULT
+    SetAttrib (
+        [in]    GUID    guidAttribute,
+        [in]    BYTE *  pbAttribute,
+        [in]    DWORD   dwAttributeLength
+        ) ;
+} ;
+
+[
+    object,
+    uuid(52dbd1ec-e48f-4528-9232-f442a68f0ae1),
+    pointer_default(unique)
+]
+interface IAttributeGet : IUnknown
+{
+    HRESULT
+    GetCount (
+        [out]   LONG *  plCount
+        ) ;
+
+    HRESULT
+    GetAttribIndexed (
+        [in]        LONG    lIndex,             //  0-based
+        [out]       GUID *  pguidAttribute,
+        [in, out]   BYTE *  pbAttribute,
+        [in, out]   DWORD * pdwAttributeLength
+        ) ;
+
+    HRESULT
+    GetAttrib (
+        [in]        GUID    guidAttribute,
+        [in, out]   BYTE *  pbAttribute,
+        [in, out]   DWORD * pdwAttributeLength
+        ) ;
+} ;
+
+/*++
+    ============================================================================
+    ============================================================================
+        well-known attributes
+--*/
+
+//  ----------------------------------------------------------------------------
+//  UDCR attribute
+
+cpp_quote ("// ------------------------------------------------------")
+cpp_quote ("// GUID: DSATTRIB_UDCRTag")
+cpp_quote ("// ------------------------------------------------------")
+
+cpp_quote ("typedef struct _UDCR_TAG {")
+cpp_quote ("    BYTE        bVersion ;")
+cpp_quote ("    BYTE        KID [24 + 1] ;")
+cpp_quote ("    ULONGLONG   ullBaseCounter ;")
+cpp_quote ("    ULONGLONG   ullBaseCounterRange ;")
+cpp_quote ("    BOOL        fScrambled ;")
+cpp_quote ("    BYTE        bStreamMark ;")
+cpp_quote ("    DWORD       dwReserved1 ;")
+cpp_quote ("    DWORD       dwReserved2 ;")
+cpp_quote ("} UDCR_TAG ;")
+
+//  ----------------------------------------------------------------------------
+//  mpeg2 video analysis attribute
+
+cpp_quote ("// ------------------------------------------------------")
+cpp_quote ("// GUID: DSATTRIB_PicSampleSeq")
+cpp_quote ("// ------------------------------------------------------")
+
+cpp_quote ("#define SAMPLE_SEQ_SEQUENCE_HEADER      1")
+cpp_quote ("#define SAMPLE_SEQ_GOP_HEADER           2")
+cpp_quote ("#define SAMPLE_SEQ_PICTURE_HEADER       3")
+
+cpp_quote ("#define SAMPLE_SEQ_CONTENT_UNKNOWN      0")
+cpp_quote ("#define SAMPLE_SEQ_CONTENT_I_FRAME      1")
+cpp_quote ("#define SAMPLE_SEQ_CONTENT_P_FRAME      2")
+cpp_quote ("#define SAMPLE_SEQ_CONTENT_B_FRAME      3")
+
+cpp_quote ("typedef struct _PIC_SEQ_SAMPLE {")
+cpp_quote ("    DWORD")
+cpp_quote ("      Content   : 3,    //  SAMPLE_CONTENT_*")
+cpp_quote ("      Start     : 1,    //  '1' if the sample is a PictureSampleSequence start")
+cpp_quote ("      FrameRate : 4,    //  see below (h.262, table 6-4)")
+cpp_quote ("      Reserved  : 20,   //  reserved; shall have value 0")
+cpp_quote ("      Version   : 4 ;   //  0")
+cpp_quote ("} PIC_SEQ_SAMPLE, *PPIC_SEQ_SAMPLE ;")
+
+cpp_quote ("//      Frame Rate")
+cpp_quote ("//          (see h.262, table 6-4)")
+cpp_quote ("//")
+cpp_quote ("//          0000    reserved (ignore field value)")
+cpp_quote ("//          0001    23.976")
+cpp_quote ("//          0010    24")
+cpp_quote ("//          0011    25")
+cpp_quote ("//          0100    29.97")
+cpp_quote ("//          0101    30")
+cpp_quote ("//          0110    50")
+cpp_quote ("//          0111    59.94")
+cpp_quote ("//          1000    60")
+
+cpp_quote ("typedef struct _SAMPLE_SEQ_OFFSET {")
+cpp_quote ("    DWORD")
+cpp_quote ("      Type      : 4,       //  SAMPLE_SEQ_*; 0 means not used")
+cpp_quote ("      Offset    : 20,      //  downstream byte offset; 0xfffff means > 2^20-1")
+cpp_quote ("      Reserved  : 8 ;      //  reserved; o")
+cpp_quote ("} SAMPLE_SEQ_OFFSET ;")
+
+cpp_quote ("#define OFFSET_MARKER_COUNT(attr_len)   \\")
+cpp_quote ("    ((attr_len - sizeof (PIC_SEQ_SAMPLE)) / sizeof (SAMPLE_SEQ_OFFSET))")
+
+cpp_quote ("#define PIC_SEQ_SAMPLE_ATTR_LEN(cOffsets)   (sizeof (PIC_SEQ_SAMPLE) + (cOffsets) * sizeof (SAMPLE_SEQ_OFFSET))")
+
+
+

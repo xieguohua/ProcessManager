@@ -1,0 +1,30 @@
+#pragma once
+
+//////////////////////////////////////////////////////////////////////////
+// XML
+DEFINE_SKIN("res\\xml\\def_skin.xml")
+DEFINE_STYLE("res\\xml\\def_style.xml")
+DEFINE_STRING("res\\xml\\def_string.xml")
+
+DEFINE_XML(IDR_MAIN, 100, "res\\xml\\dlg_main.xml")
+DEFINE_XML(IDR_DLG_DEMO_LISTWND, 101, "res\\xml\\dlg_demo_listwnd.xml")
+DEFINE_XML(IDR_IMAGE_CONTENT_MENULAYOUT, 102, "res\\xml\\image_content_menuLayout.xml")
+DEFINE_XML(IDR_DLG_CTRL_SET, 103, "res\\xml\\dlg_ctrl_set.xml")
+
+//////////////////////////////////////////////////////////////////////////
+// PNG
+DEFINE_PNG(IDP_BTN_CLOSE,               2000,   "res\\png\\btn_sys_close.png")
+DEFINE_PNG(IDP_2001,               2001,   "res\\png\\btn_sys_min.png")
+DEFINE_PNG(IDP_SHADOW,               2002,   "res\\png\\shadow.png")
+DEFINE_PNG(IDP_2003,               2003,   "res\\png\\btn_cmn.png")
+DEFINE_PNG(IDP_2004,               2004,   "res\\png\\wallpaper_image.png")
+DEFINE_PNG(IDP_2005,               2005,   "res\\png\\menu_icons.png")
+
+DEFINE_PNG(IDP_3000,               3000,   "res\\png\\slider\\slider_bar.png")
+DEFINE_PNG(IDP_3001,               3001,   "res\\png\\slider\\slider_bg.png")
+DEFINE_PNG(IDP_3002,               3002,   "res\\png\\slider\\slider_center.png")
+DEFINE_PNG(IDP_3003,               3003,   "res\\png\\slider\\slider_value.png")
+DEFINE_PNG(IDP_3004,               3004,   "res\\png\\slider\\slider_value_grey.png")
+DEFINE_PNG(IDP_3005,               3005,   "res\\png\\slider\\slider_bar_grey.png")
+DEFINE_PNG(IDP_3006,               3006,   "res\\png\\slider\\btn_small_add.png")
+DEFINE_PNG(IDP_3007,               3007,   "res\\png\\slider\\btn_small_sub.png")
