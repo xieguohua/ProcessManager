@@ -13,6 +13,7 @@ class KDlgSetting
 public:
     KDlgSetting();
 	~KDlgSetting();
+    static std::vector<ENUM_SETTING> GetSettingOption();
 
     enum
     {
@@ -59,9 +60,9 @@ private:
     void UpdateOption(const std::vector<ENUM_SETTING>& vecChecked);
     ENUM_SETTING TransformSettingOption(int nCheckViewId);
     int TransformCheckViewId(ENUM_SETTING settingOption);
-    BOOL GetSettingOptionByReg(std::vector<ENUM_SETTING>& vecOption);
     void GetCheckedOption(std::vector<ENUM_SETTING>& vecOption);
     void RecordSettingOption();
+    static BOOL GetSettingOptionByReg(std::vector<ENUM_SETTING>& vecOption);
 
 private:
     std::vector<ENUM_SETTING> m_vecCurSetting;

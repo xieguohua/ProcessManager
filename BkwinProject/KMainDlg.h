@@ -17,23 +17,27 @@ public:
     {
         IDC_BTN_CLOSE = 1000,
         IDC_BTN_SETTING = 1001,
+        IDC_BTN_KILL_PROCESS = 1002,
+        
+        IDC_TEXT_PROCESS_COUNT = 2000,
+        IDC_TEXT_CPU_USAGE = 2001,
+        IDC_TEXT_MEMORY_USAGE = 2002,
 
-		IDC_BTN_CTRL_SET = 2000,
-
-		IDC_BTN_DEMO_LISTWND = 2001,
-		IDC_BTN_DEMO_MENU = 2002,
+        TIMER_UPDATE_COMPUTER_INFO = 1000,
     };
 
 protected:
     BK_NOTIFY_MAP(IDC_RICHVIEW_WIN_EX)
         BK_NOTIFY_ID_COMMAND(IDC_BTN_CLOSE, OnBtnClose)
         BK_NOTIFY_ID_COMMAND(IDC_BTN_SETTING, OnBtnSetting)
+        BK_NOTIFY_ID_COMMAND(IDC_BTN_KILL_PROCESS, OnBtnKillProcess)
     BK_NOTIFY_MAP_END()
 
     BEGIN_MSG_MAP_EX(CBkDialogViewImplEx<KMainDlg>)
         MSG_BK_NOTIFY(IDC_RICHVIEW_WIN_EX)
         MSG_WM_INITDIALOG(OnInitDialog)
         MSG_WM_SYSCOMMAND(OnSysCommand)
+        MSG_WM_TIMER(OnTimer)
 		CHAIN_MSG_MAP(CBkDialogViewImplEx<KMainDlg>)
         REFLECT_NOTIFICATIONS_EX()
     END_MSG_MAP()
@@ -41,5 +45,11 @@ protected:
     BOOL OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/);
     void OnBtnClose();
     void OnBtnSetting();
+    void OnBtnKillProcess();
     void OnSysCommand(UINT nID, CPoint point);
+    void OnTimer(UINT_PTR uTimerId);
+
+private:
+    void UpdateColumn();
+    void UpdateComputerInfo();
 };

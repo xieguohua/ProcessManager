@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "KMainDlg.h"
+#include <shlobj.h>
+#include "KUtils.h"
 
 void InitRes()
 {
@@ -18,7 +20,11 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                        LPTSTR lpCmdLine,
                        int nCmdShow)
 {
-
+    if (!IsUserAnAdmin())
+    {
+        KUtils::RestartAsAdmin();
+        return -1;
+    }
 
     InitRes();
 

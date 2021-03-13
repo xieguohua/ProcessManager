@@ -69,16 +69,8 @@ void KDlgSetting::OnBtnCancel()
 
 void KDlgSetting::InitOption()
 {
-    std::vector<ENUM_SETTING> vecOption;
-    BOOL bRet = GetSettingOptionByReg(vecOption);
-    if (bRet)
-    {
-        UpdateOption(vecOption);
-    }
-    else
-    {
-        SetDefaultOption();
-    }
+    std::vector<ENUM_SETTING> vecOption = GetSettingOption();
+    UpdateOption(vecOption);
 }
 
 void KDlgSetting::SetDefaultOption()
@@ -180,4 +172,18 @@ void KDlgSetting::RecordSettingOption()
     }
 
     reg.Write(SETTING_REG_KEY, strSettingOption);
+}
+
+std::vector<ENUM_SETTING> KDlgSetting::GetSettingOption()
+{
+    std::vector<ENUM_SETTING> vecOption;
+    BOOL bRet = GetSettingOptionByReg(vecOption);
+    if (!bRet)
+    {
+        for (int nIndex = 0; nIndex < _countof(DEFAULT_CHECKED_LIST); ++nIndex)
+        {
+            vecOption.push_back(DEFAULT_CHECKED_LIST[nIndex]);
+        }
+    }
+    return vecOption;
 }

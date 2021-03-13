@@ -11,9 +11,9 @@
 	<body crbg="FFFFFF" width="full" height="full">
         <dlg pos="0,0,-0,80" crbg="F5F5F5">
             <img pos="30,10" skin="logo_big" />
-            <text pos="100,18">正在运行的进程：200个</text>
-            <text pos="100,43">CPU占用：3%</text>
-            <text pos="200,43">内存占用：10%</text>
+            <text id="2000" pos="100,18">正在运行的进程：220个</text>
+            <text id="2001" pos="100,43">CPU占用：13%</text>
+            <text id="2002" pos="200,43">内存占用：36%</text>
 
             <dlgbtn id="1002" pos="600,20,720,60" class="btn_cmn">  
                 <text class="text_center" pos="0,0,-0,-0">一键结束</text>  
