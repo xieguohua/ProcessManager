@@ -24,13 +24,32 @@ KMainDlg::~KMainDlg()
 
 BOOL KMainDlg::OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/)
 {
-    SetTimer(TIMER_UPDATE_COMPUTER_INFO, UPDATE_USAGE_INTERVAL);
+    SetTimer(TIMER_UPDATE_PROCESS_INFO, UPDATE_USAGE_INTERVAL);
     return TRUE;
 }
 
 void KMainDlg::OnBtnClose()
 {
     EndDialog(IDCLOSE);
+}
+
+void KMainDlg::OnBtnSize()
+{
+    if (IsZoomed())
+    {
+        ShowWindow(SW_RESTORE);
+        SetItemAttribute(IDC_BTN_SIZE, "skin", "maxbtn");
+    }
+    else
+    {
+        ShowWindow(SW_SHOWMAXIMIZED);
+        SetItemAttribute(IDC_BTN_SIZE, "skin", "restorebtn");
+    }
+}
+
+void KMainDlg::OnBtnMin()
+{
+    ShowWindow(SW_SHOWMINIMIZED);
 }
 
 void KMainDlg::OnSysCommand(UINT nID, CPoint point)
@@ -54,7 +73,7 @@ void KMainDlg::OnBtnSetting()
     UINT_PTR nRet = dlg.DoModal();
     if (nRet == IDOK)
     {
-        UpdateColumn();
+        UpdateSetting();
     }
 }
 
@@ -65,18 +84,18 @@ void KMainDlg::OnBtnKillProcess()
 
 void KMainDlg::OnTimer(UINT_PTR uTimerId)
 {
-    if (TIMER_UPDATE_COMPUTER_INFO == uTimerId)
+    if (TIMER_UPDATE_PROCESS_INFO == uTimerId)
     {
-        UpdateComputerInfo();
+        UpdateProcessInfo();
     }
 }
 
-void KMainDlg::UpdateColumn()
+void KMainDlg::UpdateSetting()
 {
 
 }
 
-void KMainDlg::UpdateComputerInfo()
+void KMainDlg::UpdateProcessInfo()
 {
     CString strProcess;
     CString strCpuUsage;

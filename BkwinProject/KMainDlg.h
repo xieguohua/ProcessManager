@@ -16,19 +16,23 @@ public:
     enum
     {
         IDC_BTN_CLOSE = 1000,
-        IDC_BTN_SETTING = 1001,
-        IDC_BTN_KILL_PROCESS = 1002,
+        IDC_BTN_SIZE = 1001,
+        IDC_BTN_MIN = 1002,
+        IDC_BTN_SETTING = 1003,
+        IDC_BTN_KILL_PROCESS = 1004,
         
         IDC_TEXT_PROCESS_COUNT = 2000,
         IDC_TEXT_CPU_USAGE = 2001,
         IDC_TEXT_MEMORY_USAGE = 2002,
 
-        TIMER_UPDATE_COMPUTER_INFO = 1000,
+        TIMER_UPDATE_PROCESS_INFO = 1000,
     };
 
 protected:
     BK_NOTIFY_MAP(IDC_RICHVIEW_WIN_EX)
         BK_NOTIFY_ID_COMMAND(IDC_BTN_CLOSE, OnBtnClose)
+        BK_NOTIFY_ID_COMMAND(IDC_BTN_SIZE, OnBtnSize)
+        BK_NOTIFY_ID_COMMAND(IDC_BTN_MIN, OnBtnMin)
         BK_NOTIFY_ID_COMMAND(IDC_BTN_SETTING, OnBtnSetting)
         BK_NOTIFY_ID_COMMAND(IDC_BTN_KILL_PROCESS, OnBtnKillProcess)
     BK_NOTIFY_MAP_END()
@@ -44,12 +48,14 @@ protected:
 
     BOOL OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/);
     void OnBtnClose();
+    void OnBtnSize();
+    void OnBtnMin();
     void OnBtnSetting();
     void OnBtnKillProcess();
     void OnSysCommand(UINT nID, CPoint point);
     void OnTimer(UINT_PTR uTimerId);
 
 private:
-    void UpdateColumn();
-    void UpdateComputerInfo();
+    void UpdateSetting();
+    void UpdateProcessInfo();
 };

@@ -1,8 +1,8 @@
-﻿<layer title="进程管理器-设置" width="400" height="420" appwin="1" resize="0">
-	<header crbg="f3f3f3"  width="full" height="36">
-        <img pos="10,10" skin="logo" />
-		<text class="dlgtitle" pos="30,12">进程管理器-设置</text>
-		<imgbtn id="1000" class="linkimage" skin="closebtn" pos="-37,0"/>
+﻿<layer title="进程管理器-设置" width="400" height="420" resize="0">
+	<header crbg="2A81D0"  width="full" height="34">
+        <img pos="10,9" skin="logo" />
+		<text class="dlgtitle" pos="30,11">进程管理器-设置</text>
+		<imgbtn id="1000" class="linkimage" skin="closebtn" pos="-34,0"/>
 	</header>
 
 	<body crbg="ffffff" width="full" height="full">

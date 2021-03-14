@@ -1,8 +1,5 @@
 ﻿<skins>
-    
-	<png name="closebtn" src="2000" subwidth="36"/>
-    <button name="normalbtn" border="7D9EBC" bg="FBFCFD" bgup="FEFEFE" bgdown="C6E2FD" bguphover="FEFEFE" bgdownhover="DBEDFE" bguppush="C6E2FD" bgdownpush="FEFEFE"/>
-  <png name="minbtn" src="2001" subwidth="36"/>
+  <button name="normalbtn" border="7D9EBC" bg="FBFCFD" bgup="FEFEFE" bgdown="C6E2FD" bguphover="FEFEFE" bgdownhover="DBEDFE" bguppush="C6E2FD" bgdownpush="FEFEFE"/>
   <png name="btn_cmn" src="2003" subwidth="100"/>
   <png name="wallpaper_image" src="2004"/>
   <png name="menu_icons" src="2005" subwidth="12"/>
@@ -16,10 +13,11 @@
   <png name="btn_small_add" src="3006" subwidth="18"/>
   <png name="btn_small_sub" src="3007" subwidth="18"/>
 
-    <png name="closebtn"  src="4000" subwidth="32"/>
-    <png name="maxbtn"    src="4001" subwidth="32"/>
-    <png name="minbtn"    src="4002" subwidth="32"/>
+    <png name="closebtn" src="4000" subwidth="34"/>
+    <png name="maxbtn" src="4001" subwidth="34"/>
+    <png name="minbtn" src="4002" subwidth="34"/>
     <png name="logo" src="4003"/>
     <png name="menu_setting" src="4004"/>
     <png name="logo_big" src="4005"/>
+    <png name="restorebtn" src="4006" subwidth="34" />
 </skins>

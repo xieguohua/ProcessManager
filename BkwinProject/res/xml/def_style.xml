@@ -3,7 +3,7 @@
 <class name="msgboxbody" font="0000" crtext="000000" crbg="FFFFFF"/>
 <class name="msgboxfoot"  font="0000" crtext="000000" crbg="0FF0FF"/>
 
-<class name="dlgtitle" font="0004" crtext="4E759A"/>
+<class name="dlgtitle" font="0004" crtext="ffffff"/>
 <class name="linkimage" cursor="hand"/>
 <class name="link_bule_text" textmode="25" crtext="548EF8" font="0002" cursor="hand" />
   
