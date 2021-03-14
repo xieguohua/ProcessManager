@@ -18,6 +18,7 @@ public:
 	ProcInfo* GetProcInfo(DWORD dwPid);
 	void ClearProcInfos();
 	void GetAllProcInfos(std::vector< ProcInfo* > & vecProcInfos);
+	int GetProcCount();
 
 private:
 	std::vector< ProcInfo* > m_vecInfoReusePool;

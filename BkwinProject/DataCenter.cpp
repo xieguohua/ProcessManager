@@ -77,3 +77,8 @@ void DataCenter::GetAllProcInfos(std::vector< ProcInfo* > & vecProcInfos)
 		vecProcInfos.push_back(iter->second);
 	}
 }
+
+int DataCenter::GetProcCount()
+{
+	return m_mapPid2ProcInfos.size();
+}
