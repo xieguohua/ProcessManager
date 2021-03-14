@@ -95,7 +95,7 @@ void KMainDlg::OnTimer(UINT_PTR uTimerId)
 
 void KMainDlg::UpdateSetting()
 {
-
+    m_wndProcList.UpdateSetting();
 }
 
 void KMainDlg::UpdateUsage()
@@ -103,7 +103,7 @@ void KMainDlg::UpdateUsage()
     CString strProcess;
     CString strCpuUsage;
     CString strMemoryUsage;
-    strProcess.Format(TEXT_PROCESS_COUNT, 210);
+    strProcess.Format(TEXT_PROCESS_COUNT, DataCenter::GetInstance()->GetProcCount());
     strCpuUsage.Format(TEXT_CPU_USAGE, m_usageDetector.GetCpuUsage());
     strMemoryUsage.Format(TEXT_MEMORY_USAGE, m_usageDetector.GetMemoryUsage());
     SetItemText(IDC_TEXT_PROCESS_COUNT, strProcess);

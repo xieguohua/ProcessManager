@@ -28,6 +28,9 @@ public:
         IDC_CHECK_PROCESS_PATH,
         IDC_CHECK_THREAD_COUNT,
         IDC_CHECK_HANDLE_COUND,
+        IDC_CHECK_PARENT_ID,
+        IDC_CHECK_OTHER_1,
+        IDC_CHECK_OTHER_2,
         IDC_CHECK_END,
     };
 

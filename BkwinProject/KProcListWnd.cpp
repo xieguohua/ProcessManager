@@ -6,6 +6,7 @@
 #include "framework/KDubaPath.h"
 #include <objbase.h>
 #include <shlobj.h>
+#include "KDlgSetting.h"
 
 namespace
 {
@@ -29,6 +30,7 @@ BOOL KProcListWnd::OnInitDialog(CWindow wndFocus, LPARAM lInitParam)
 {
 	m_pListWnd = (CBkListWnd*)FindChildByCmdID(IDC_PROC_LIST);
 	SetTimer(TIMER_UPDATE_PROC_LIST, TIMER_UPDATE_PROC_LIST_SPAN);
+    UpdateSetting();
 	return TRUE;
 }
 
@@ -104,6 +106,7 @@ void KProcListWnd::CreateItemByProcInfo(ProcInfo* pInfo)
 
 	CBkStatic* pTextProcName = new CBkStatic();
 	pTextProcName->SetAttribute("pos", "0,0,150,25", FALSE);
+    pTextProcName->SetAttribute("class", "end_ellipsis", FALSE);
 	pTextProcName->SetInnerText(pInfo->m_strProcName);
 	pLayout->AppendChild(pTextProcName);
 
@@ -115,25 +118,35 @@ void KProcListWnd::CreateItemByProcInfo(ProcInfo* pInfo)
 	pTextPid->SetInnerText(strPid);
 	pLayout->AppendChild(pTextPid);
 
-	CBkStatic* pTextProcPath = new CBkStatic();
-    pTextProcPath->SetAttribute("id", "100", FALSE);
-	pTextProcPath->SetAttribute("pos", "0,0,200,25", FALSE);
-	pTextProcPath->SetInnerText(pInfo->m_strProcPath);
-	pLayout->AppendChild(pTextProcPath);
+    if (IsEnableSetting(SETTING_CPU_USAGE))
+    {
+        CString strCpuUse;
+        strCpuUse.Format(_T("%d%%"), pInfo->m_dwCpuUse);
+        CBkStatic* pTextCpuUse = new CBkStatic();
+        pTextCpuUse->SetAttribute("pos", "0,0,80,25", FALSE);
+        pTextCpuUse->SetInnerText(strCpuUse);
+        pLayout->AppendChild(pTextCpuUse);
+    }
 
-	CString strCpuUse;
-	strCpuUse.Format(_T("%d%%"), pInfo->m_dwCpuUse);
-	CBkStatic* pTextCpuUse = new CBkStatic();
-	pTextCpuUse->SetAttribute("pos", "0,0,80,25", FALSE);
-	pTextCpuUse->SetInnerText(strCpuUse);
-	pLayout->AppendChild(pTextCpuUse);
+    if (IsEnableSetting(SETTING_MEMORY_USAGE))
+    {
+        CString strMemoryUse;
+        strMemoryUse.Format(_T("%dK"), pInfo->m_dwMemoryUse);
+        CBkStatic* pTextMemoryUse = new CBkStatic();
+        pTextMemoryUse->SetAttribute("pos", "0,0,80,25", FALSE);
+        pTextMemoryUse->SetInnerText(strMemoryUse);
+        pLayout->AppendChild(pTextMemoryUse);
+    }
 
-	CString strMemoryUse;
-	strMemoryUse.Format(_T("%dK"), pInfo->m_dwMemoryUse);
-	CBkStatic* pTextMemoryUse = new CBkStatic();
-	pTextMemoryUse->SetAttribute("pos", "0,0,80,25", FALSE);
-	pTextMemoryUse->SetInnerText(strMemoryUse);
-	pLayout->AppendChild(pTextMemoryUse);
+    if (IsEnableSetting(SETTING_PROCESS_PATH))
+    {
+        CBkStatic* pTextProcPath = new CBkStatic();
+        pTextProcPath->SetAttribute("id", "100", FALSE);
+        pTextProcPath->SetAttribute("pos", "0,0,200,25", FALSE);
+        pTextProcPath->SetAttribute("class", "end_ellipsis", FALSE);
+        pTextProcPath->SetInnerText(pInfo->m_strProcPath);
+        pLayout->AppendChild(pTextProcPath);
+    }
 
     pListItem->AddView(pLayout);
     pListItem->SetInnerText(strPid);
@@ -147,8 +160,8 @@ void KProcListWnd::CreateItemByProcInfo(ProcInfo* pInfo)
 
 void KProcListWnd::OnListItemRBtnUp(int nListItem)
 {
-    CString strPath = GetItemInnerText(nListItem, IDC_PROCESS_PATH);
-    CString strPid = GetItemInnerText(nListItem, IDC_PROCESS_ID);
+    CString strPath = GetItemInnerText(nListItem, IDC_ITEM_PROCESS_PATH);
+    CString strPid = GetItemInnerText(nListItem, IDC_ITEM_PROCESS_ID);
 
     m_selectProInfo = ProcInfo();
     m_selectProInfo.m_strProcPath = strPath;
@@ -246,4 +259,65 @@ void KProcListWnd::ExportInfo()
 
     CString strPath(ofn.lpstrFile);
     ExportProcInfo(m_selectProInfo.m_dwPid, strPath);
+}
+
+void KProcListWnd::UpdateSetting()
+{
+    for (int nIndex = IDC_TITLE_START; nIndex < IDC_TITLE_END; ++nIndex)
+    {
+        SetItemVisible(nIndex, FALSE);
+    }
+
+    KDlgSetting dlg;
+    std::vector<ENUM_SETTING> vec = dlg.GetSettingOption();
+    for (int nIndex = 0; nIndex < vec.size(); ++nIndex)
+    {
+        ENUM_SETTING settingOption = vec[nIndex];
+        int nViewId = 0;
+        switch (settingOption)
+        {
+        case SETTING_CPU_USAGE:
+            nViewId = IDC_PROC_CPU_USAGE;
+            break;
+        case SETTING_MEMORY_USAGE:
+            nViewId = IDC_PROC_MEMORY_USAGE;
+            break;
+        case SETTING_PROCESS_PATH:
+            nViewId = IDC_PROC_PATH;
+            break;
+        case SETTING_THREAD_COUNT:
+            nViewId = IDC_PROC_THREAD_COUNT;
+            break;
+        case SETTING_HANDLE_COUND:
+            nViewId = IDC_PROC_HANDLE_COUND;
+            break;
+        case SETTING_PARENT_THREAD:
+            nViewId = IDC_PROC_PARENT_ID;
+            break;
+        case SETTING_OTHER_1:
+            nViewId = IDC_PROC_OTHER_1;
+            break;
+        case SETTING_OTHER_2:
+            nViewId = IDC_PROC_OTHER_2;
+            break;
+        default:
+            break;
+        }
+        SetItemVisible(nViewId, TRUE);
+    }
+}
+
+BOOL KProcListWnd::IsEnableSetting(ENUM_SETTING settingOption)
+{
+    KDlgSetting dlg;
+    std::vector<ENUM_SETTING> vec = dlg.GetSettingOption();
+    for (int nIndex = 0; nIndex < vec.size(); ++nIndex)
+    {
+        if (vec[nIndex] == settingOption)
+        {
+            return TRUE;
+        }
+    }
+
+    return FALSE;
 }

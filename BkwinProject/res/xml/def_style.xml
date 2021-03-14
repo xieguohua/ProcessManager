@@ -19,4 +19,5 @@
   <class name="slider_bar_grey" skin="slider_bar_grey"/>
   <class name="slider_value_grey" skin="slider_value_grey"/>
   <class name="normalbtn" skin="normalbtn" font="0000" crtext="000000" textmode="25" cursor="hand" x-margin="5"/>
+    <class name="end_ellipsis" textmode="48024" />
 </style>

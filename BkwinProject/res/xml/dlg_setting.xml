@@ -14,10 +14,10 @@
             <check id="2003" pos="|5,40">线程数</check>
             
             <check id="2004" pos="20,70">句柄数</check>
-            <check id="2005" pos="|5,70">CPU占用</check>
+            <check id="2005" pos="|5,70">父亲程ID</check>
             
-            <check id="2006" pos="20,100">线程数</check>
-            <check id="2007" pos="|5,100">页面缓冲池高峰值</check>
+            <check id="2006" pos="20,100">其他1</check>
+            <check id="2007" pos="|5,100">其他2</check>
         </dlg>
 	</body>
     

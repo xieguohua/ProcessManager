@@ -2,6 +2,7 @@
 
 #include "bkwin/CBkDialogViewImplEx.h"
 #include "DataCenter.h"
+#include "SettingDefine.h"
 
 class KProcListWnd: public CBkDialogViewImplEx<KProcListWnd>
 {
@@ -9,9 +10,20 @@ public:
 	enum
 	{
 		IDC_PROC_LIST = 2012,
+   
+        IDC_TITLE_START = 2003,
+        IDC_PROC_CPU_USAGE = 2003,
+        IDC_PROC_MEMORY_USAGE,
+        IDC_PROC_PATH,
+        IDC_PROC_THREAD_COUNT,
+        IDC_PROC_HANDLE_COUND,
+        IDC_PROC_PARENT_ID,
+        IDC_PROC_OTHER_1,
+        IDC_PROC_OTHER_2,
+        IDC_TITLE_END,
 
-        IDC_PROCESS_PATH = 100,
-        IDC_PROCESS_ID = 101,
+        IDC_ITEM_PROCESS_PATH = 100,
+        IDC_ITEM_PROCESS_ID = 101,
 	};
 	
 	enum 
@@ -22,6 +34,7 @@ public:
 
 	KProcListWnd(void);
 	~KProcListWnd(void);
+    void UpdateSetting();
 
 protected:
 	BK_NOTIFY_MAP(IDC_RICHVIEW_WIN_EX)
@@ -53,6 +66,7 @@ private:
     CString GetItemInnerText(int nListItem, int nItemChildId);
     void OpenFileAttribute();
     void ExportInfo();
+    BOOL IsEnableSetting(ENUM_SETTING settingOption);
 
 private:
 	CBkListWnd* m_pListWnd;

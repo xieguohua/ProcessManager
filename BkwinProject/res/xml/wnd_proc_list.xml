@@ -10,16 +10,16 @@
 				<text pos="2,0,-2,-0">进程ID</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
-			<dlg id="2003" pos="0,0,200,20" crbg="FFFFFF">
-				<text pos="2,0,-2,-0">进程路径</text>
-				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
-			</dlg>
-			<dlg id="2004" pos="0,0,80,20" crbg="FFFFFF">
+			<dlg id="2003" pos="0,0,80,20" crbg="FFFFFF">
 				<text pos="2,0,-2,-0">CPU占用</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
-			<dlg id="2005" pos="0,0,80,20" crbg="FFFFFF">
+			<dlg id="2004" pos="0,0,80,20" crbg="FFFFFF">
 				<text pos="2,0,-2,-0">内存占用</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+            <dlg id="2005" pos="0,0,200,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">进程路径</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
 			<dlg id="2006" pos="0,0,80,20" crbg="FFFFFF">
