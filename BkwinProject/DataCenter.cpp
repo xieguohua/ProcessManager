@@ -43,22 +43,37 @@ void DataCenter::AddProcInfo(ProcInfo* pInfo)
 {
 	if (pInfo != NULL)
 	{
-		m_vecProcInfos.push_back(pInfo);
+		m_mapPid2ProcInfos[pInfo->m_dwPid] = pInfo;
 	}
+}
+
+ProcInfo* DataCenter::GetProcInfo(DWORD dwPid)
+{
+	ProcInfo* pInfo = NULL;
+	if (m_mapPid2ProcInfos.find(dwPid) != m_mapPid2ProcInfos.end())
+	{
+		pInfo = m_mapPid2ProcInfos[dwPid];
+	}
+
+	return pInfo;
 }
 
 void DataCenter::ClearProcInfos()
 {
-	std::vector< ProcInfo* >::iterator iter;
-	for (iter = m_vecProcInfos.begin(); iter != m_vecProcInfos.end(); iter++)
+	std::map< DWORD, ProcInfo* >::iterator iter;
+	for (iter = m_mapPid2ProcInfos.begin(); iter != m_mapPid2ProcInfos.end(); iter++)
 	{
-		ReuseProcInfo(*iter);
+		ReuseProcInfo(iter->second);
 	}
 
-	m_vecProcInfos.clear();
+	m_mapPid2ProcInfos.clear();
 }
 
-std::vector< ProcInfo* > & DataCenter::GetAllProcInfos()
+void DataCenter::GetAllProcInfos(std::vector< ProcInfo* > & vecProcInfos)
 {
-	return m_vecProcInfos;
+	std::map< DWORD, ProcInfo* >::iterator iter;
+	for (iter = m_mapPid2ProcInfos.begin(); iter != m_mapPid2ProcInfos.end(); iter++)
+	{
+		vecProcInfos.push_back(iter->second);
+	}
 }

@@ -46,14 +46,18 @@ void KProcListWnd::UpdateProcList()
 void KProcListWnd::OnGetProcBaseInfo(LPCTSTR lpszProcName, DWORD dwPid, LPCTSTR lpszProcPath, DWORD dwCpuUse, DWORD dwMemoryUse)
 {
 	DataCenter* pDataCenter = DataCenter::GetInstance();
-	ProcInfo* pInfo = pDataCenter->CreateProcInfo();
+	ProcInfo* pInfo = pDataCenter->GetProcInfo(dwPid);
+	if (NULL == pInfo)
+	{
+		pInfo = pDataCenter->CreateProcInfo();
+		pInfo->m_dwPid = dwPid;
+		pDataCenter->AddProcInfo(pInfo);
+	}
+
 	pInfo->m_strProcName = lpszProcName;
-	pInfo->m_dwPid = dwPid;
 	pInfo->m_strProcPath = lpszProcPath;
 	pInfo->m_dwCpuUse = dwCpuUse;
 	pInfo->m_dwMemoryUse = dwMemoryUse;
-
-	pDataCenter->AddProcInfo(pInfo);
 }
 
 void KProcListWnd::UpdateProcListUI()
@@ -61,7 +65,8 @@ void KProcListWnd::UpdateProcListUI()
 	m_pListWnd->DeleteAllItem();
 
 	std::vector< ProcInfo* >::iterator iter;
-	std::vector< ProcInfo* > & vecProcInfos = DataCenter::GetInstance()->GetAllProcInfos();
+	std::vector< ProcInfo* > vecProcInfos;
+	DataCenter::GetInstance()->GetAllProcInfos(vecProcInfos);
 	for (iter = vecProcInfos.begin(); iter != vecProcInfos.end(); iter++)
 	{
 		CreateItemByProcInfo(*iter);

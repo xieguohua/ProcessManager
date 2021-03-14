@@ -15,10 +15,11 @@ public:
 	void ReuseProcInfo(ProcInfo* pInfo);
 	ProcInfo* CreateProcInfo();
 	void AddProcInfo(ProcInfo* pInfo);
+	ProcInfo* GetProcInfo(DWORD dwPid);
 	void ClearProcInfos();
-	std::vector< ProcInfo* > & GetAllProcInfos();
+	void GetAllProcInfos(std::vector< ProcInfo* > & vecProcInfos);
 
 private:
 	std::vector< ProcInfo* > m_vecInfoReusePool;
-	std::vector< ProcInfo* > m_vecProcInfos;
+	std::map< DWORD, ProcInfo* > m_mapPid2ProcInfos;
 };
