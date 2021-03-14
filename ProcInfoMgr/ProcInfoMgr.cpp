@@ -40,6 +40,8 @@ ProcInfo* GetProcInfo(DWORD dwPid)
 	ProcInfo* pInfo = NULL;
 	ProcInfo* pExistInfo = NULL;
 	HANDLE hProcess = NULL;
+	HMODULE hModule;
+	DWORD dwNeed;
 	DWORD dwTime = ::GetTickCount();
 
 	if (g_mapPid2Info.find(dwPid) != g_mapPid2Info.end())
@@ -53,10 +55,18 @@ ProcInfo* GetProcInfo(DWORD dwPid)
 	}
 
 	hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwPid);
-	if (hProcess == INVALID_HANDLE_VALUE)
+	if (hProcess == NULL || hProcess == INVALID_HANDLE_VALUE)
 	{
 		TCHAR chBuf[1024];
 		wsprintf(chBuf, __TEXT("OpenProcess %d failed (%d)./n"), dwPid, GetLastError());
+		OutputDebugString(chBuf);
+		goto Exit0;
+	}
+
+	if ( EnumProcessModules( hProcess, &hModule, sizeof(hModule), &dwNeed) == FALSE)
+	{
+		TCHAR chBuf[1024];
+		wsprintf(chBuf, __TEXT("EnumProcessModules %d failed (%d)./n"), dwPid, GetLastError());
 		OutputDebugString(chBuf);
 		goto Exit0;
 	}
@@ -74,12 +84,12 @@ ProcInfo* GetProcInfo(DWORD dwPid)
 	{
 		// process name
 		TCHAR szProcessName[MAX_PATH] = {0};
-		::GetModuleBaseName(hProcess, NULL, szProcessName, sizeof(szProcessName));
+		::GetModuleBaseName(hProcess, hModule, szProcessName, sizeof(szProcessName));
 		pInfo->m_strProcName = szProcessName;
 
 		// file path
 		TCHAR szFilePath[MAX_PATH] = {0};
-		::GetModuleFileNameEx(hProcess, NULL, szFilePath, sizeof(szFilePath));
+		::GetModuleFileNameEx(hProcess, hModule, szFilePath, sizeof(szFilePath));
 		pInfo->m_strProcPath = szFilePath;
 
 		// memory use
