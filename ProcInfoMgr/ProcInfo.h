@@ -3,7 +3,14 @@
 class ProcInfo
 {
 public:
-	ProcInfo() {}
+	ProcInfo() 
+		: m_dwPid(0)
+		, m_dwCpuUse(0)
+		, m_dwMemoryUse(0)
+		, m_dwUpdateTime(0)
+	{
+	}
+
 	~ProcInfo() {}
 
 public:

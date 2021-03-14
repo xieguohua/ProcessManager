@@ -92,5 +92,19 @@ void KProcListWnd::CreateItemByProcInfo(ProcInfo* pInfo)
 	pTextProcPath->SetInnerText(pInfo->m_strProcPath);
 	pListItem->AddView(pTextProcPath);
 
+	CString strCpuUse;
+	strCpuUse.Format(_T("%d%%"), pInfo->m_dwCpuUse);
+	CBkStatic* pTextCpuUse = new CBkStatic();
+	pTextCpuUse->SetAttribute("pos", "240,0,320,20", FALSE);
+	pTextCpuUse->SetInnerText(strCpuUse);
+	pListItem->AddView(pTextCpuUse);
+
+	CString strMemoryUse;
+	strMemoryUse.Format(_T("%dK"), pInfo->m_dwMemoryUse);
+	CBkStatic* pTextMemoryUse = new CBkStatic();
+	pTextMemoryUse->SetAttribute("pos", "320,0,400,20", FALSE);
+	pTextMemoryUse->SetInnerText(strMemoryUse);
+	pListItem->AddView(pTextMemoryUse);
+
 	m_pListWnd->AppendListItem(pListItem);
 }

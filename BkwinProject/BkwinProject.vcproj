@@ -59,8 +59,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="..\product\win32\processmanager.exe"
 				AdditionalDependencies="..\product\win32\ProcInfoMgr.lib"
+				OutputFile="..\product\win32\processmanager.exe"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
 			/>
@@ -212,19 +212,19 @@
 				>
 			</File>
 			<File
-				RelativePath=".\KUtils.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\KUtils.h"
-				>
-			</File>
-			<File
 				RelativePath=".\KProcListWnd.cpp"
 				>
 			</File>
 			<File
 				RelativePath=".\KProcListWnd.h"
+				>
+			</File>
+			<File
+				RelativePath=".\KUtils.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\KUtils.h"
 				>
 			</File>
 			<File

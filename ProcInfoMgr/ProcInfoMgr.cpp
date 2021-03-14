@@ -73,13 +73,13 @@ ProcInfo* GetProcInfo(DWORD dwPid)
 
 	{
 		// process name
-		TCHAR szProcessName[256];
-		GetModuleBaseName(hProcess, NULL, szProcessName, 256);
+		TCHAR szProcessName[MAX_PATH] = {0};
+		::GetModuleBaseName(hProcess, NULL, szProcessName, sizeof(szProcessName));
 		pInfo->m_strProcName = szProcessName;
 
 		// file path
-		TCHAR szFilePath[256] ;
-		GetModuleFileNameEx(hProcess, NULL, szFilePath, 256);
+		TCHAR szFilePath[MAX_PATH] = {0};
+		::GetModuleFileNameEx(hProcess, NULL, szFilePath, sizeof(szFilePath));
 		pInfo->m_strProcPath = szFilePath;
 
 		// memory use
