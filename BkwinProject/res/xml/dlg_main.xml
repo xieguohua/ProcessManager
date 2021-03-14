@@ -21,6 +21,9 @@
                 <text transparent="1" class="text_center" pos="0,0,-0,-0">结束进程</text>  
             </dlgbtn>
         </dlg>
+
+		<realwnd pos="0,80,-0,-0" id="3000" show="1">
+		</realwnd>
 	</body>
 
 </layer>

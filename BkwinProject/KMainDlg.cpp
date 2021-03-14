@@ -25,6 +25,7 @@ KMainDlg::~KMainDlg()
 BOOL KMainDlg::OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/)
 {
     SetTimer(TIMER_UPDATE_PROCESS_INFO, UPDATE_USAGE_INTERVAL);
+	m_wndProcList.CreateEx(m_hWnd, IDC_PROC_LIST_WND);
     return TRUE;
 }
 

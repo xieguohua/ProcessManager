@@ -4,6 +4,7 @@
 #include "bkwin/CBkDialogViewImplEx.h"
 #include "bkwin/bkshadowdrawable.h"
 #include "bkwin/CBkDialogMenu.h"
+#include "KProcListWnd.h"
 
 class KMainDlg
     : public CBkDialogViewImplEx<KMainDlg>
@@ -26,6 +27,8 @@ public:
         IDC_TEXT_MEMORY_USAGE = 2002,
 
         TIMER_UPDATE_PROCESS_INFO = 1000,
+
+		IDC_PROC_LIST_WND = 3000,
     };
 
 protected:
@@ -58,4 +61,5 @@ protected:
 private:
     void UpdateSetting();
     void UpdateProcessInfo();
+	KProcListWnd m_wndProcList;
 };

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer title="BkWin" width="800" height="480" appwin="0" resize="0" child="1" noborder="0" layered="0">
+	<body crbg="FFFFFF" width="full" height="full">
+        <linearlayout pos="0,0,800,20" layout_orientation="0">
+			<dlg id="2001" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">进程名</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2002" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">进程ID</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2003" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">进程路径</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2004" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">CPU占用</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2005" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">内存占用</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2006" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">线程数</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2007" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">句柄数</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2008" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">父进程ID</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2009" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">其他1</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2010" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">其他2</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+		</linearlayout>
+
+		<hr id="2011" pos="0,20,-0,20" size="1" crbg="E5E5E5" />
+
+		<listwnd id="2012" pos="0,20,-0,-0">
+		</listwnd>
+
+	</body>
+
+</layer>

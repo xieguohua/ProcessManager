@@ -12,6 +12,7 @@ DEFINE_XML(IDR_IMAGE_CONTENT_MENULAYOUT, 102, "res\\xml\\image_content_menuLayou
 DEFINE_XML(IDR_DLG_CTRL_SET, 103, "res\\xml\\dlg_ctrl_set.xml")
 DEFINE_XML(IDR_DLG_SETTING, 104, "res\\xml\\dlg_setting.xml")
 
+DEFINE_XML(IDR_PROC_LIST_WND, 110, "res\\xml\\wnd_proc_list.xml")
 
 //////////////////////////////////////////////////////////////////////////
 // PNG

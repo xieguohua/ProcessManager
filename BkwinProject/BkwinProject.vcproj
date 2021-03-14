@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			OutputDirectory="..\product\win32\"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			CharacterSet="1"
@@ -60,6 +60,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				OutputFile="..\product\win32\processmanager.exe"
+				AdditionalDependencies="..\product\win32\ProcInfoMgr.lib"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
 			/>
@@ -171,6 +172,14 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\DataCenter.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\DataCenter.h"
+				>
+			</File>
+			<File
 				RelativePath=".\DemoCmnCtrlSetDlg.cpp"
 				>
 			</File>
@@ -208,6 +217,14 @@
 			</File>
 			<File
 				RelativePath=".\KUtils.h"
+				>
+			</File>
+			<File
+				RelativePath=".\KProcListWnd.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\KProcListWnd.h"
 				>
 			</File>
 			<File
@@ -725,6 +742,10 @@
 				</File>
 				<File
 					RelativePath=".\res\xml\dlg_setting.xml"
+					>
+				</File>
+				<File
+					RelativePath=".\res\xml\wnd_proc_list.xml"
 					>
 				</File>
 			</Filter>
