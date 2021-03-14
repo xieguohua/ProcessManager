@@ -39,7 +39,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;..\Microsoft SDKs\Windows\v6.1\Include&quot;;..\include;..\;..\publish;..\publish\wtl"
+				AdditionalIncludeDirectories="&quot;E:\Microsoft SDKs\Windows\v6.1\Include&quot;;..\include;..\;..\publish;..\publish\wtl"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
