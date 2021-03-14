@@ -259,6 +259,14 @@
 				RelativePath=".\TaskMgrDemo.h"
 				>
 			</File>
+			<File
+				RelativePath=".\UsageDetector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\UsageDetector.h"
+				>
+			</File>
 		</Filter>
 		<Filter
 			Name="import"

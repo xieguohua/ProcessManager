@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer title="BkWin" width="800" height="480" appwin="0" resize="0" child="1" noborder="0" layered="0">
 	<body crbg="FFFFFF" width="full" height="full">
-        <linearlayout pos="0,0,800,20" layout_orientation="0">
-			<dlg id="2001" pos="0,0,80,20" crbg="FFFFFF">
+        <linearlayout pos="0,0,-0,20" layout_orientation="0">
+			<dlg id="2001" pos="0,0,150,20" crbg="FFFFFF" layout_margin_left="40">
 				<text pos="2,0,-2,-0">进程名</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
@@ -10,7 +10,7 @@
 				<text pos="2,0,-2,-0">进程ID</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
-			<dlg id="2003" pos="0,0,80,20" crbg="FFFFFF">
+			<dlg id="2003" pos="0,0,200,20" crbg="FFFFFF">
 				<text pos="2,0,-2,-0">进程路径</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
@@ -46,7 +46,7 @@
 
 		<hr id="2011" pos="0,20,-0,20" size="1" crbg="E5E5E5" />
 
-		<listwnd id="2012" pos="0,20,-0,-0">
+		<listwnd layout="0" id="2012" pos="0,20,-0,-0">
 		</listwnd>
 
 	</body>

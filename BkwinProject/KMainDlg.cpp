@@ -16,15 +16,17 @@ KMainDlg::KMainDlg()
     : CBkDialogViewImplEx<KMainDlg>(IDR_MAIN)
 {
 	BkWin::WndShadowHelper<KMainDlg>::SetShadowData(12, IDP_SHADOW);
+    m_usageDetector.Initialize();
 }
 
 KMainDlg::~KMainDlg()
 {
+    m_usageDetector.Uninitialize();
 }
 
 BOOL KMainDlg::OnInitDialog(CWindow /*wndFocus*/, LPARAM /*lInitParam*/)
 {
-    SetTimer(TIMER_UPDATE_PROCESS_INFO, UPDATE_USAGE_INTERVAL);
+    SetTimer(TIMER_UPDATE_USAGE, UPDATE_USAGE_INTERVAL);
 	m_wndProcList.CreateEx(m_hWnd, IDC_PROC_LIST_WND);
     return TRUE;
 }
@@ -85,9 +87,9 @@ void KMainDlg::OnBtnKillProcess()
 
 void KMainDlg::OnTimer(UINT_PTR uTimerId)
 {
-    if (TIMER_UPDATE_PROCESS_INFO == uTimerId)
+    if (TIMER_UPDATE_USAGE == uTimerId)
     {
-        UpdateProcessInfo();
+        UpdateUsage();
     }
 }
 
@@ -96,14 +98,14 @@ void KMainDlg::UpdateSetting()
 
 }
 
-void KMainDlg::UpdateProcessInfo()
+void KMainDlg::UpdateUsage()
 {
     CString strProcess;
     CString strCpuUsage;
     CString strMemoryUsage;
     strProcess.Format(TEXT_PROCESS_COUNT, 210);
-    strCpuUsage.Format(TEXT_CPU_USAGE, 11);
-    strMemoryUsage.Format(TEXT_MEMORY_USAGE, 38);
+    strCpuUsage.Format(TEXT_CPU_USAGE, m_usageDetector.GetCpuUsage());
+    strMemoryUsage.Format(TEXT_MEMORY_USAGE, m_usageDetector.GetMemoryUsage());
     SetItemText(IDC_TEXT_PROCESS_COUNT, strProcess);
     SetItemText(IDC_TEXT_CPU_USAGE, strCpuUsage);
     SetItemText(IDC_TEXT_MEMORY_USAGE, strMemoryUsage);

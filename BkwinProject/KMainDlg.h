@@ -5,6 +5,7 @@
 #include "bkwin/bkshadowdrawable.h"
 #include "bkwin/CBkDialogMenu.h"
 #include "KProcListWnd.h"
+#include "UsageDetector.h"
 
 class KMainDlg
     : public CBkDialogViewImplEx<KMainDlg>
@@ -26,7 +27,7 @@ public:
         IDC_TEXT_CPU_USAGE = 2001,
         IDC_TEXT_MEMORY_USAGE = 2002,
 
-        TIMER_UPDATE_PROCESS_INFO = 1000,
+        TIMER_UPDATE_USAGE = 1000,
 
 		IDC_PROC_LIST_WND = 3000,
     };
@@ -60,6 +61,9 @@ protected:
 
 private:
     void UpdateSetting();
-    void UpdateProcessInfo();
+    void UpdateUsage();
+
+private:
+    UsageDetector m_usageDetector;
 	KProcListWnd m_wndProcList;
 };
