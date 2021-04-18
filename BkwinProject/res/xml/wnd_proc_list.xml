@@ -11,35 +11,39 @@
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
 			<dlg id="2003" pos="0,0,80,20" crbg="FFFFFF">
-				<text pos="2,0,-2,-0">CPU占用</text>
+				<text pos="2,0,-2,-0">父进程ID</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
 			<dlg id="2004" pos="0,0,80,20" crbg="FFFFFF">
-				<text pos="2,0,-2,-0">内存占用</text>
+				<text pos="2,0,-2,-0">会话ID</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
-            <dlg id="2005" pos="0,0,200,20" crbg="FFFFFF">
-				<text pos="2,0,-2,-0">进程路径</text>
+            <dlg id="2005" pos="0,0,80,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">CPU占用</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
 			<dlg id="2006" pos="0,0,80,20" crbg="FFFFFF">
-				<text pos="2,0,-2,-0">线程数</text>
+				<text pos="2,0,-2,-0">内存占用</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
-			<dlg id="2007" pos="0,0,80,20" crbg="FFFFFF">
+            <dlg id="2007" pos="0,0,80,20" crbg="FFFFFF">
 				<text pos="2,0,-2,-0">句柄数</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
 			<dlg id="2008" pos="0,0,80,20" crbg="FFFFFF">
-				<text pos="2,0,-2,-0">父进程ID</text>
+				<text pos="2,0,-2,-0">创建时间</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
 			<dlg id="2009" pos="0,0,80,20" crbg="FFFFFF">
-				<text pos="2,0,-2,-0">其他1</text>
+				<text pos="2,0,-2,-0">USER对象</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
 			<dlg id="2010" pos="0,0,80,20" crbg="FFFFFF">
-				<text pos="2,0,-2,-0">其他2</text>
+				<text pos="2,0,-2,-0">GDI对象</text>
+				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
+			</dlg>
+			<dlg id="2011" pos="0,0,300,20" crbg="FFFFFF">
+				<text pos="2,0,-2,-0">进程路径</text>
 				<hr pos="-1,0,-1,-0" size="1" crbg="E5E5E5" />
 			</dlg>
 		</linearlayout>

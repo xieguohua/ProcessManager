@@ -180,22 +180,6 @@
 				>
 			</File>
 			<File
-				RelativePath=".\DemoCmnCtrlSetDlg.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\DemoCmnCtrlSetDlg.h"
-				>
-			</File>
-			<File
-				RelativePath=".\DemoListWndDlg.cpp"
-				>
-			</File>
-			<File
-				RelativePath=".\DemoListWndDlg.h"
-				>
-			</File>
-			<File
 				RelativePath=".\KDlgSetting.cpp"
 				>
 			</File>
@@ -253,10 +237,6 @@
 			</File>
 			<File
 				RelativePath=".\stdafx.h"
-				>
-			</File>
-			<File
-				RelativePath=".\TaskMgrDemo.h"
 				>
 			</File>
 			<File
@@ -696,6 +676,22 @@
 				</File>
 				<File
 					RelativePath="..\include\Actor\KActor.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="kbase"
+				>
+				<File
+					RelativePath="..\include\kbase\lock.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\include\kbase\lock.h"
+					>
+				</File>
+				<File
+					RelativePath="..\include\kbase\utildefine.h"
 					>
 				</File>
 			</Filter>

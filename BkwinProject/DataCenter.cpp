@@ -43,12 +43,14 @@ void DataCenter::AddProcInfo(ProcInfo* pInfo)
 {
 	if (pInfo != NULL)
 	{
+        kbase::AutoLock locker(m_lockInfos);
 		m_mapPid2ProcInfos[pInfo->m_dwPid] = pInfo;
 	}
 }
 
 ProcInfo* DataCenter::GetProcInfo(DWORD dwPid)
 {
+    kbase::AutoLock locker(m_lockInfos);
 	ProcInfo* pInfo = NULL;
 	if (m_mapPid2ProcInfos.find(dwPid) != m_mapPid2ProcInfos.end())
 	{
@@ -60,6 +62,7 @@ ProcInfo* DataCenter::GetProcInfo(DWORD dwPid)
 
 void DataCenter::ClearProcInfos()
 {
+    kbase::AutoLock locker(m_lockInfos);
 	std::map< DWORD, ProcInfo* >::iterator iter;
 	for (iter = m_mapPid2ProcInfos.begin(); iter != m_mapPid2ProcInfos.end(); iter++)
 	{
@@ -71,6 +74,7 @@ void DataCenter::ClearProcInfos()
 
 void DataCenter::GetAllProcInfos(std::vector< ProcInfo* > & vecProcInfos)
 {
+    kbase::AutoLock locker(m_lockInfos);
 	std::map< DWORD, ProcInfo* >::iterator iter;
 	for (iter = m_mapPid2ProcInfos.begin(); iter != m_mapPid2ProcInfos.end(); iter++)
 	{
@@ -80,5 +84,6 @@ void DataCenter::GetAllProcInfos(std::vector< ProcInfo* > & vecProcInfos)
 
 int DataCenter::GetProcCount()
 {
+    kbase::AutoLock locker(m_lockInfos);
 	return m_mapPid2ProcInfos.size();
 }

@@ -179,7 +179,15 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\ProcInfoDetector.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\ProcInfoMgr.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Utils.cpp"
 				>
 			</File>
 		</Filter>
@@ -193,11 +201,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ProcInfoDetector.h"
+				>
+			</File>
+			<File
 				RelativePath=".\ProcInfoMgr.h"
 				>
 			</File>
 			<File
 				RelativePath=".\stdafx.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Utils.h"
 				>
 			</File>
 		</Filter>

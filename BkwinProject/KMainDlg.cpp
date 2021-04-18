@@ -1,8 +1,7 @@
 #include "stdafx.h"
 #include "KMainDlg.h"
-#include "DemoListWndDlg.h"
-#include "DemoCmnCtrlSetDlg.h"
 #include "KDlgSetting.h"
+#include "ProcInfoMgr/ProcInfoMgr.h"
 
 namespace
 {
@@ -82,7 +81,13 @@ void KMainDlg::OnBtnSetting()
 
 void KMainDlg::OnBtnKillProcess()
 {
-
+    std::vector<DWORD> processIdList;
+    m_wndProcList.GetCheckedPrococess(processIdList);
+    for (int nIndex = 0; nIndex < processIdList.size(); ++nIndex)
+    {
+        DWORD dwPid = processIdList[nIndex];
+        CloseProc(dwPid);
+    }
 }
 
 void KMainDlg::OnTimer(UINT_PTR uTimerId)

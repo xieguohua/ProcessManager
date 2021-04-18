@@ -7,17 +7,20 @@
 
 	<body crbg="ffffff" width="full" height="full">
         <dlg pos="0,20,-0,-0">
-            <check id="2000" pos="20,10">CPU占用</check>
-            <check id="2001" pos="|5,10">内存占用</check>
+            <check id="2000" pos="20,10">父进程ID</check>
+            <check id="2001" pos="|5,10">会话ID</check>
             
-            <check id="2002" pos="20,40">进程文件路径</check>
-            <check id="2003" pos="|5,40">线程数</check>
+            <check id="2002" pos="20,40">CPU占用</check>
+            <check id="2003" pos="|5,40">内存占用</check>
             
             <check id="2004" pos="20,70">句柄数</check>
-            <check id="2005" pos="|5,70">父亲程ID</check>
+            <check id="2005" pos="|5,70">创建时间</check>
             
-            <check id="2006" pos="20,100">其他1</check>
-            <check id="2007" pos="|5,100">其他2</check>
+            <check id="2006" pos="20,100">USER对象</check>
+            <check id="2007" pos="|5,100">GDI对象</check>
+            
+            <check id="2008" pos="20,130">进程文件路径</check>
+            <!-- <check id="2009" pos="|5,130">创建时间</check> -->
         </dlg>
 	</body>
     

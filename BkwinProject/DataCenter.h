@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ProcInfoMgr/ProcInfo.h"
+#include "include/kbase/lock.h"
 
 class DataCenter
 {
@@ -23,4 +24,5 @@ public:
 private:
 	std::vector< ProcInfo* > m_vecInfoReusePool;
 	std::map< DWORD, ProcInfo* > m_mapPid2ProcInfos;
+    kbase::Locker m_lockInfos;
 };
